@@ -47,11 +47,20 @@ public class <%= gwt_resource_name %>Base implements Resource {
       else -%>
  else if<%- end -%> ("<%= k.underscore %>".equals(key)) {
      <%- if properties[k] == 'int' -%>
-                this.<%= k %> = new Double(json.get(key).isNumber().doubleValue()).intValue();
+                JSONString js = json.get(key).isString();
+                if (js != null) {
+                  this.<%= k %> = new Double(json.get(key).isNumber().doubleValue()).intValue();
+                }
      <%- elsif properties[k] == 'boolean' -%>
-                this.<%= k %> = json.get(key).isBoolean().booleanValue();
+                JSONString js = json.get(key).isString();
+                if (js != null) {
+                  this.<%= k %> = json.get(key).isBoolean().booleanValue();
+                }
      <%- elsif properties[k] == 'double' -%>
-                this.<%= k %> = json.get(key).isNumber().getValue();
+                JSONString js = json.get(key).isString();
+                if (js != null) {
+                  this.<%= k %> = json.get(key).isNumber().getValue();
+                }
      <%- elsif properties[k] == 'DateOnly' -%>
                 JSONString js = json.get(key).isString();
                 if (js != null) {
