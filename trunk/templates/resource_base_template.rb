@@ -38,7 +38,6 @@ public class <%= gwt_resource_name %>Base implements Resource {
         JSONObject json = (JSONObject) JSONParser.parse(representation);
         
         for (String key : json.keySet()) {
-            String key = (String) i.next();
             
 <%- first = true -%>
 <%- properties.keys.each do |k| -%>
