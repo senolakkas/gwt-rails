@@ -113,7 +113,7 @@ public class <%= gwt_resource_name %>Base implements Resource {
     // Accessors
 
 <%- properties.keys.each do |k| -%>
-    public <%= properties[k].sub('Only', '') %>  <%- if properties[k] == 'boolean' -%>is<%- else -%>get<%- end -%><%= k.camelize %>() {
+    public <%= properties[k].sub('Only', '') %><%= ' '%><%- if properties[k] == 'boolean' -%>is<%- else -%>get<%- end -%><%= k.camelize %>() {
         return <%= k %>;
     }
     
