@@ -1,3 +1,5 @@
+# Copyright (c) 2007, 2008 Jon Crosby. All rights reserved.
+# Portions Copyright 2010 Sean Laurent. All rights reserved.
 package <%= gwt_resource_package %>;
 
 import com.kaboomerang.gwt.rest.client.resource.Resource;
@@ -17,9 +19,7 @@ import java.beans.PropertyChangeSupport;
  * Place custom code in <%= gwt_resource_name %>.java
  *
  * Each migration will overwrite this file.
- *
  */
-
 public class <%= gwt_resource_name %>Base implements Resource {
     protected PropertyChangeSupport changes = new PropertyChangeSupport(this);
 <%- if properties.values.detect { |n| n == 'Date' } -%>
