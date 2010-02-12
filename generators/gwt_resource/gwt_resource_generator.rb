@@ -1,3 +1,6 @@
+# Copyright (c) 2007, 2008 Jon Crosby. All rights reserved.
+# Portions Copyright 2010 Sean Laurent. All rights reserved.
+
 require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'gwt_on_rails')
 
 class GwtResourceGenerator < Rails::Generator::NamedBase
