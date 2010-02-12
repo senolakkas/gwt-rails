@@ -21,7 +21,6 @@ import java.beans.PropertyChangeSupport;
  * Each migration will overwrite this file.
  */
 public class <%= gwt_resource_name %>Base implements Resource {
-    protected PropertyChangeSupport changes = new PropertyChangeSupport(this);
 <%- if properties.values.detect { |n| n == 'Date' } -%>
     protected DateTimeFormat dateTimeFormat = DateTimeFormat.getFormat("yyyy/MM/dd HH:mm:ss ZZZZ");
 <%- end -%>
@@ -119,25 +118,7 @@ public class <%= gwt_resource_name %>Base implements Resource {
     public void set<%= k.camelize %>(<%= properties[k].sub('Only', '') %> <%= k %>) {
         <%= properties[k].sub('Only', '') %> old = this.<%= k %>;
         this.<%= k %> = <%= k %>;
-        changes.firePropertyChange("<%= k %>", old, <%= k %>);
     }
     
 <%- end -%>
-    // Property Change Support
-    
-    public void addPropertyChangeListener(PropertyChangeListener l) {
-        changes.addPropertyChangeListener(l);
-    }
-
-    public void addPropertyChangeListener(String propertyName, PropertyChangeListener l) {
-        changes.addPropertyChangeListener(propertyName, l);
-    }
-
-    public void removePropertyChangeListener(PropertyChangeListener l) {
-        changes.removePropertyChangeListener(l);
-    }
-
-    public void removePropertyChangeListener(String propertyName, PropertyChangeListener l) {
-        changes.removePropertyChangeListener(propertyName, l);
-    }
 }

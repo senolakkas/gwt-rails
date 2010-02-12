@@ -8,9 +8,6 @@
   <inherits name='com.google.gwt.json.JSON'/>
   <inherits name='com.kaboomerang.gwt.rest.REST'/>
   
-  <!-- Inherit property change support -->
-  <inherits name='com.googlecode.gwtx.Java'/>
-
   <!-- Specify the app entry point class.  -->
   <entry-point class='<%= gwt_entry_point %>'/> 
 </module>
