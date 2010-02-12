@@ -1,11 +1,11 @@
 package <%= gwt_entry_point_package %>;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ClickListener;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -19,8 +19,9 @@ public class <%= class_name %> implements EntryPoint {
         final Button button = new Button("Click me");
         final Label label = new Label();
 
-        button.addClickListener(new ClickListener() {
-            public void onClick(Widget sender) {
+        button.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent arg0) {
                 if (label.getText().equals(""))
                     label.setText("Hello World!");
                 else
