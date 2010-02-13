@@ -4,8 +4,11 @@
 module GwtRails
   class Client
     attr_accessor :name
+    attr_accessor :path_name
+    attr_accessor :java_class_name
     attr_accessor :gwt_root
     attr_accessor :package
+    attr_accessor :package_path
     attr_accessor :dir
     attr_accessor :path
     attr_accessor :resource_path
@@ -15,11 +18,18 @@ module GwtRails
     attr_accessor :entry_point
     
     def initialize(name)
-      @name = name.camelize
+      packages = name.split(".")
+      @package = "" if packages.length == 1
+      @package = packages[0, packages.length - 1].join(".")
+      @package_path = @package.gsub(/\./, "/") if @package.length > 1
+
+      @name = packages[-1]
+      @java_class_name = packages[-1]
+      @path_name = @name.downcase 
+      
       @gwt_root = File.join('app', 'gwt')
-      @package = @name.downcase
       @module = [@package, @name].join('.')
-      @dir = @name.underscore
+      @dir = @package_path
       @path = File.join(@gwt_root, @dir)
       @resource_path = File.join(@path, 'src', @package, 'client', 'resource')
       @entry_point_package = [@package, 'client'].join('.')
@@ -31,7 +41,7 @@ end
 
 module ActiveRecord
   class SchemaDumper
-    include GwtOnRails
+    include GwtRails
     alias_method :dump_gwt_copy, :dump
   
     def dump(stream)
@@ -79,7 +89,7 @@ module ActiveRecord
         properties['id'] = 'int'
       end
 
-      column_specs = columns.map do |column|
+      columns.map do |column|
         next if column.name == pk
         properties[java_property_name(column)] = java_mapping(column.type)
       end
