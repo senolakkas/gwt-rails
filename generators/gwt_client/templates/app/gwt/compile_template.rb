@@ -1,6 +1,6 @@
 #!/bin/sh
 APPDIR=`dirname $0`;
-VENDOR_LIBS="$APPDIR/lib/gwt-rest.jar:$APPDIR/lib/gwtx.jar" # append custom entries here
+VENDOR_LIBS="$APPDIR/lib/gwt-rest.jar" # append custom entries here
 
 GWT_HOME="<%= gwt_home %>"
 GWT_CP="$GWT_HOME/gwt-user.jar:$GWT_HOME/gwt-dev.jar"
