@@ -1,7 +1,7 @@
 # Copyright (c) 2007, 2008 Jon Crosby. All rights reserved.
 # Portions Copyright 2010 Sean Laurent. All rights reserved.
 
-require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'gwt_on_rails')
+require File.join(File.dirname(__FILE__), '..', '..', 'lib', 'gwt_rails')
 
 class GwtClientGenerator < Rails::Generator::NamedBase
   attr_accessor :gwt_home
