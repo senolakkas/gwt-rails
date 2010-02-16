@@ -9,7 +9,7 @@ class GwtResourceGenerator < Rails::Generator::NamedBase
   
   def initialize(*runtime_args)
     super(*runtime_args)
-    @gwt_client = GwtOnRails::Client.new args[0]
+    @gwt_client = GwtRails::Client.new args[0]
     @gwt_resource_package = gwt_client.resource_package
   end
   
