@@ -3,7 +3,7 @@
 
 require 'fileutils'
 
-namespace :<%= file_name %> do
+namespace :<%= gwt_path_name %> do
   desc "compile java to javascript"
   task :compile => :environment do
     sh "<%= gwt_client_path %>/<%= class_name %>-compile"
