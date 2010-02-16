@@ -65,10 +65,6 @@ class GwtClientGenerator < Rails::Generator::NamedBase
       m.file "app/gwt/lib/gwt-rest.jar",
              "app/gwt/#{gwt_path_name}/lib/gwt-rest.jar"
 
-      # add GWTx
-      m.file "app/gwt/lib/gwtx.jar",
-             "app/gwt/#{gwt_path_name}/lib/gwtx.jar"
-                
       # build controller, helper and template for GWT module container
       m.template "app/controllers/controller_template.rb",
                  "app/controllers/#{gwt_path_name}_controller.rb"
