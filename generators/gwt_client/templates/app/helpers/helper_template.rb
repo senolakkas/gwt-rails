@@ -1,2 +1,2 @@
-module <%= class_name %>Helper
+module <%= gwt_name %>Helper
 end
