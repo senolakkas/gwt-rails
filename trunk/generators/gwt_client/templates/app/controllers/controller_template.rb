@@ -1,4 +1,4 @@
-class <%= class_name %>Controller < ApplicationController
+class <%= gwt_name %>Controller < ApplicationController
   layout false
 
   def index
