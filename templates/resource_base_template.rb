@@ -1,5 +1,7 @@
-# Copyright (c) 2007, 2008 Jon Crosby. All rights reserved.
-# Portions Copyright 2010 Sean Laurent. All rights reserved.
+/*
+ * Copyright (c) 2007, 2008 Jon Crosby. All rights reserved.
+ * Portions Copyright 2010 Sean Laurent. All rights reserved.
+ */
 package <%= gwt_resource_package %>;
 
 import com.kaboomerang.gwt.rest.client.resource.Resource;
@@ -10,8 +12,6 @@ import com.google.gwt.json.client.JSONString;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import java.util.Date;
 <%- end -%>
-import java.beans.PropertyChangeListener; 
-import java.beans.PropertyChangeSupport;
 
 /*
  * Generated Base Class. Do not edit.
