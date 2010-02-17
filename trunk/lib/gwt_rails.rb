@@ -31,7 +31,7 @@ module GwtRails
       @module = [@package, @name].join('.')
       @dir = @package_path
       @path = File.join(@gwt_root, @dir)
-      @resource_path = File.join(@gwt_root, @path_name, 'src', @package_path, 'client', 'resource')
+      @resource_path = File.join(@gwt_root, @module, 'src', @package_path, 'client', 'resource')
       @entry_point_package = [@package, 'client'].join('.')
       @entry_point = [@entry_point_package, @name].join('.')
       @resource_package = [@entry_point_package, 'resource'].join('.')

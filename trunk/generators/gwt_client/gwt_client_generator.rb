@@ -46,25 +46,25 @@ class GwtClientGenerator < Rails::Generator::NamedBase
       m.class_collisions class_name
       
       # create GWT directory structure
-      m.directory File.join('app', 'gwt', gwt_path_name, 'lib')
-      m.directory File.join('app', 'gwt', gwt_path_name, 'src', gwt_package_path, 'client', 'resource')
+      m.directory File.join('app', 'gwt', gwt_module, 'lib')
+      m.directory File.join('app', 'gwt', gwt_module, 'src', gwt_package_path, 'client', 'resource')
       
       # generate GWT starter project and module
       m.template "app/gwt/shell_template.rb",
-                 "app/gwt/#{gwt_path_name}/#{@gwt_name}-shell",
+                 "app/gwt/#{gwt_module}/#{gwt_name}-shell",
                  :chmod => 0755
       m.template "app/gwt/compile_template.rb",
-                 "app/gwt/#{gwt_path_name}/#{@gwt_name}-compile",
+                 "app/gwt/#{gwt_module}/#{gwt_name}-compile",
                  :chmod => 0755
       m.template "app/gwt/src/config_template.rb",
-                 "app/gwt/#{gwt_path_name}/src/#{gwt_package_path}/#{@gwt_name}.gwt.xml"
+                 "app/gwt/#{gwt_module}/src/#{gwt_package_path}/#{gwt_name}.gwt.xml"
       m.template "app/gwt/src/client/entry_point_template.rb",
-                 "app/gwt/#{gwt_path_name}/src/#{gwt_package_path}/client/#{@gwt_name}.java"
+                 "app/gwt/#{gwt_module}/src/#{gwt_package_path}/client/#{gwt_name}.java"
                  
       # add GWT-REST
       m.file "app/gwt/lib/gwt-rest.jar",
-             "app/gwt/#{gwt_path_name}/lib/gwt-rest.jar"
-
+             "app/gwt/#{gwt_module}/lib/gwt-rest.jar"
+             
       # build controller, helper and template for GWT module container
       m.template "app/controllers/controller_template.rb",
                  "app/controllers/#{gwt_path_name}_controller.rb"
