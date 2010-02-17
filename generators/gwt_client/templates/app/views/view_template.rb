@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>  
-    <title>Wrapper HTML for <%= class_name %></title>
+    <title>Wrapper HTML for <%= gwt_name %></title>
 
     <!--                                           -->
     <!-- This script loads your compiled module.   -->
@@ -23,10 +23,10 @@
     <!-- OPTIONAL: include this if you want history support -->
     <iframe src="javascript:''" id="__gwt_historyFrame" style="width:0;height:0;border:0"></iframe>
 
-    <h1><%= class_name %></h1>
+    <h1><%= gwt_name %></h1>
 
     <p>
-      This is an example of a host page for the <%= class_name %> client. 
+      This is an example of a host page for the <%= gwt_name %> client. 
       You can attach a GWT module to an HTML element within an existing
       page or simply leave the &lt;body&gt; blank and use it to manage
       the entire UI.

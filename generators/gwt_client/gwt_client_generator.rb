@@ -77,7 +77,7 @@ class GwtClientGenerator < Rails::Generator::NamedBase
                  "app/views/#{gwt_path_name}/index.html.erb"
                  
       # create folder for compiled GWT JavaScript
-      m.directory File.join('public', 'gwt', gwt_path_name)
+      m.directory File.join('public', 'gwt', gwt_module)
       
       # create Rake tasks to management development
       m.template "lib/tasks/rake_template.rb",
