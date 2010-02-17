@@ -6,12 +6,12 @@ require 'fileutils'
 namespace :<%= gwt_path_name %> do
   desc "compile java to javascript"
   task :compile => :environment do
-    sh "<%= gwt_client_path %>/<%= class_name %>-compile"
+    sh "<%= gwt_client_path %>/<%= gwt_name %>-compile"
   end
   
   desc "run <%= gwt_package %> module in hosted mode"
   task :hosted => :environment do
-    sh "<%= gwt_client_path %>/<%= class_name %>-shell"
+    sh "<%= gwt_client_path %>/<%= gwt_name %>-shell"
   end
   
   desc "clean compiled javascript"

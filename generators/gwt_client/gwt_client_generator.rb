@@ -28,7 +28,7 @@ class GwtClientGenerator < Rails::Generator::NamedBase
     @gwt_entry_point_package = gwt_client.entry_point_package
     @gwt_entry_point = gwt_client.entry_point
     @gwt_module = gwt_client.module
-    @gwt_client_path = gwt_client.path
+    @gwt_client_path = File.join(gwt_client.gwt_root, gwt_client.module)
   end
   
   def gwt_dev_platform
